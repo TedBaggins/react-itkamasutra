@@ -1,0 +1,75 @@
+.nav {
+    grid-area: n;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+}
+.nav a {
+    position: relative;
+    padding-left: 24px;
+    text-decoration: none;
+    color: #5d5d5d;
+}
+.nav a.active {
+    font-weight: bold;
+}
+
+.item {
+    color: #5d5d5d;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+/* .item.active {
+    font-weight: bold;
+} */
+.item:hover {
+    background: #eeeeee;
+    cursor: pointer;
+}
+
+.navbar__item_profile:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f2c0";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7600;
+}
+.navbar__item_messages:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f003";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7600;
+}
+.navbar__item_news:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f09d";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7600;
+}
+.navbar__item_music:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f001";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7600;
+}
+.navbar__item_settings:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f085";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7600;
+}
+

@@ -1,0 +1,40 @@
+.item {
+    color: #5d5d5d;
+}
+
+.item img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.post__message_wrap {
+    padding: 10px 0;
+}
+
+.post__like_wrap {
+    position: relative;
+    padding: 10px 0;
+}
+.post__like_wrap:before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 0;
+    background: #dedede;
+}
+.post__like {
+    padding-left: 24px;
+    position: relative;
+}
+.post__like:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f08a";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5d5d5d;
+}
