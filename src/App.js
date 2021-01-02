@@ -17,9 +17,11 @@ const App = (props) => {
             <div className="app__wrapper">
                 <Header/>
                 <Navbar/>
-                <div class="app__wrapper_content">
+                <div className="app__wrapper_content">
                     <Route path="/profile" render={() => <Profile 
-                        postsData={props.state.profilePage}/>}/>
+                        state={props.state.profilePage} 
+                        addPost={props.addPost}
+                        updateNewPostText={props.updateNewPostText}/>}/>
                     <Route path="/dialogs" render={() => <Dialogs 
                         state={props.state.dialogsPage}/>}/>
                     <Route path="/news" render={() => <News/>}/>

@@ -20,6 +20,20 @@
 .dialog__messages {
     padding: 10px;
 }
+.dialog__message_wrap {
+    position: relative;
+}
 .dialog__message {
-
+    margin-bottom: 40px;
+    padding-left: 24px;
+}
+.dialog__message:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\eaa3";
+    font-size: 12px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7600;
 }
