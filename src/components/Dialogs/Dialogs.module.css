@@ -12,6 +12,10 @@
 .dialogs__item {
     
 }
+.dialogs__item a {
+    text-decoration: none;
+    color: #5d5d5d;
+}
 
 .dialog__messages {
     padding: 10px;

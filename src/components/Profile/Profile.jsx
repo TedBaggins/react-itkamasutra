@@ -1,16 +1,13 @@
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 import s from './Profile.module.css';
 
-const Profile = () => {
+const Profile = (props) => {
+
     return (
         <div>
-            <div>
-                <img src="https://pcvector.net/uploads/posts/2020-05/1588792159_blurred-light-background-min.jpg"></img>
-            </div>
-            <div>
-                Ava + description
-            </div>
-            <MyPosts/>
+            <ProfileInfo/>           
+            <MyPosts postsData={props.state.postsData}/>
         </div>
     );
 }
