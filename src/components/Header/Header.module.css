@@ -3,8 +3,29 @@
     background-color: #fff;
     padding: 15px 20px 15px 20px;
     border-radius: 0px 0px 4px 4px;
+    position: relative;
 }
 .header img {
     width: 40px;
     padding: 5px;
+}
+
+.loginBlock {
+    float: right;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.loginBlock a {
+    text-decoration: none;
+    color: #5d5d5d;
+    font-weight: 500;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    background: #eeeeee;
+}
+.loginBlock a:hover {
+    background: #e0e0e0;
+    cursor: pointer;
 }
