@@ -13,7 +13,6 @@ const Header = (props) => {
                     </div>
                     <div className={styles.header__login}>
                         {props.isAuth ? <span>{props.login}</span> : <NavLink to={'/login'}>Login</NavLink>}
-                        {/*<NavLink to={'/login'}>Login</NavLink>*/}
                     </div>
                 </div>
             </div>

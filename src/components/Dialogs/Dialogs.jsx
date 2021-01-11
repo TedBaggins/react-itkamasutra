@@ -1,8 +1,6 @@
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import {NavLink} from 'react-router-dom';
-import s from './Dialogs.module.css';
-import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
+import styles from './Dialogs.module.css';
 
 const Dialogs = (props) => {
 
@@ -25,13 +23,13 @@ const Dialogs = (props) => {
     }
 
     return (
-        <section className={s.dialogs}>
-            <div className={s.dialogs__users}>
+        <section className={styles.dialogs}>
+            <div className={styles.dialogs__users}>
                 { dialogsElements }
             </div>
-            <div className={s.dialog__messages}>
-                <div className={s.dialog__box}>{ messagesElements }</div>
-                <div className={s.dialog__add}>
+            <div className={styles.dialog__messages}>
+                <div className={styles.dialog__box}>{ messagesElements }</div>
+                <div className={styles.dialog__add}>
                     <div><textarea 
                             value={newMessageBody} 
                             onChange={onNewMessageChange}

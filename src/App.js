@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import './fonts.css';
-import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -20,14 +18,12 @@ const App = (props) => {
                 <div className="container">
                     <div className="main-wrapper__inner">
                         <Navbar/>
-                        {/*<div className="app__wrapper_content">*/}
                             <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
                             <Route path="/dialogs" render={() => <DialogsContainer/>}/>
                             <Route path="/news" render={() => <News/>}/>
                             <Route path="/music" render={() => <Music/>}/>
                             <Route path="/settings" render={() => <Settings/>}/>
                             <Route path="/users" render={() => <UsersContainer/>}/>
-                        {/*</div>*/}
                     </div>
                 </div>
             </section>
