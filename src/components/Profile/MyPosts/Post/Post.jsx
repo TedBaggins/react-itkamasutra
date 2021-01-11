@@ -1,10 +1,11 @@
 import s from './Post.module.css';
+import user_default from '../../../../images/user_default.png';
 
 const Post = (props) => {
     return (
         <div className={s.item}>
             <div className={s.post__message_wrap}>
-                <img src="https://www.freeiconspng.com/thumbs/login-icon/user-login-icon-14.png"/>
+                <img src={user_default}/>
                 {props.message}
             </div>
             <div className={s.post__like_wrap}>

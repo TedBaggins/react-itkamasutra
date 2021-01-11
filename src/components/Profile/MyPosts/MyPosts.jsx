@@ -1,6 +1,6 @@
 import React from 'react';
 import Post from './Post/Post';
-import s from './MyPosts.module.css';
+import styles from './MyPosts.module.css';
 
 const MyPosts = (props) => {
 
@@ -20,9 +20,9 @@ const MyPosts = (props) => {
     }
 
     return (
-        <div>
-            <h3>My posts</h3>
-            <div>
+        <div className={styles.posts}>
+            <p className={styles.posts__title}>My posts</p>
+            <div className={styles.posts__add}>
                 <div>
                     <textarea onChange={onPostChange} ref={newPostElement}
                               value={props.newPostText}/>
@@ -31,7 +31,7 @@ const MyPosts = (props) => {
                     <button onClick={onAddPost}>Add post</button>
                 </div>
             </div>
-            <div className={s.posts}>
+            <div className={styles.post_items}>
                 { postsElements }
             </div>
         </div>

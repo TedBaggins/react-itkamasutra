@@ -1,3 +1,24 @@
+.profileinfo {
+    display: flex;
+}
+
+.profileinfo__photo {
+    width: 30%;
+    padding: 15px;
+    background: #fff;
+    border-radius: 4px;
+    margin-right: 20px;
+    box-shadow: 0 5px 5px #ececec;
+}
+.profileinfo__photo img {
+    width: 100%;
+    border-radius: 4px;
+}
+
 .profileinfo__description {
-    
+    width: 70%;
+    padding: 15px;
+    background: #fff;
+    color: #5d5d5d;
+    box-shadow: 0 5px 5px #ececec;
 }

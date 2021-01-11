@@ -1,28 +1,103 @@
 .dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
+    /*display: grid;*/
+    /*grid-template-columns: 2fr 10fr;*/
+    width: 100%;
+    display: flex;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px #ececec;
 }
 
-.dialogs__items {
-    padding: 10px;
+.dialogs__users {
+    padding: 10px 15px 15px 15px;
+    width: 25%;
+    position: relative;
 }
-.dialogs__items .active {
+.dialogs__users img {
+    height: 50px;
+}
+.dialogs__users:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: #dedede;
+}
+.dialogs__users .active {
     font-weight: bold;
 }
-.dialogs__item {
-    
+.dialogs__user {
+    border-radius: 5px;
+    position: relative;
 }
-.dialogs__item a {
+.dialogs__user:hover {
+    background: #ffd8b8;
+}
+.dialogs__user img {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.dialogs__user a {
+    width: 100%;
+    padding: 20px 0 20px 65px;
     text-decoration: none;
     color: #5d5d5d;
 }
 
 .dialog__messages {
-    padding: 10px;
+    width: 75%;
+}
+.dialog__box {
+    padding: 30px 30px 5px 30px;
+    position: relative;
+}
+.dialog__box:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: #dedede;
 }
 .dialog__message_wrap {
     position: relative;
 }
+
+.dialog__add {
+    padding: 15px;
+}
+.dialog__add textarea {
+    width: 100%;
+    outline: none;
+    border: 1px solid #d0d0d0;
+    padding: 10px;
+    height: 80px;
+    resize: none;
+    margin-bottom: 10px;
+    color: #5d5d5d;
+}
+.dialog__add button {
+    padding: 8px 30px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    background: #ff9941;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+.dialog__add button:hover {
+    background: #ff7600;
+    transition: 0.2s;
+}
+
 .dialog__message {
     margin-bottom: 40px;
     padding-left: 24px;

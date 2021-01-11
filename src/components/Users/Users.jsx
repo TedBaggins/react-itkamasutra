@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Users.module.css';
-import userPhoto from '../../images/user-photo-default.jpg';
+import userPhoto from '../../images/user_default.png';
 import {NavLink} from 'react-router-dom';
 import * as axios from 'axios';
 
@@ -13,8 +13,8 @@ const Users = (props) => {
     }
 
     return (
-        <div>
-            <div>
+        <section className={styles.users}>
+            <div className={styles.users__pages}>
                 {pages.map(p => {
                     if (p > 20) {
                         return;
@@ -24,17 +24,23 @@ const Users = (props) => {
             </div>
             {
                 props.users.map( u => {
-                    return <div key={u.id}>
-                        <span>
-                            <div>
+                    return <div key={u.id} className={styles.users__item}>
+                        <div className={styles.users__box_photo_name}>
+                            <div className={styles.users__photo}>
                                 <NavLink to={'/profile/' + u.id}>
                                     <img className={styles.userPhoto} src={ u.photos.small != null ? u.photos.small : userPhoto}></img>
                                 </NavLink>
                             </div>
-                            <div>
-                                { u.followed 
+                            <div className={styles.users__name_status}>
+                                <div className={styles.users__name}>{u.name}</div>
+                                <div>{u.status != null ? u.status : "status" }</div>
+                            </div>
+                        </div>
+                        <div className={styles.users__box_follow}>
+                            <div className={styles.users__follow}>
+                                { u.followed
                                     ? <button onClick={() => {
-                                        axios.delete(`https://social-network.samuraijs.com/api/1.0/unfollow/` + u.id, 
+                                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/` + u.id,
                                             {
                                                 withCredentials:true,
                                                 headers: {
@@ -42,14 +48,14 @@ const Users = (props) => {
                                                 }
                                             })
                                             .then(response => {
-                                                if (response.data.resultCode === 0) {
-                                                    props.unfollow(u.id);
+                                                    if (response.data.resultCode === 0) {
+                                                        props.unfollow(u.id);
+                                                    }
                                                 }
-                                            }
-                                        );
-                                    }}>Unfollow</button> 
+                                            );
+                                    }}>Unfollow</button>
                                     : <button onClick={() => {
-                                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/` + u.id, 
+                                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/` + u.id,
                                             {}, {
                                                 withCredentials:true,
                                                 headers: {
@@ -57,28 +63,18 @@ const Users = (props) => {
                                                 }
                                             })
                                             .then(response => {
-                                                if (response.data.resultCode === 0) {
-                                                    props.follow(u.id);
+                                                    if (response.data.resultCode === 0) {
+                                                        props.follow(u.id);
+                                                    }
                                                 }
-                                            }
-                                        );
+                                            );
                                     }}>Follow</button> }
                             </div>
-                        </span>
-                        <span>
-                            <span>
-                                <div>{u.name}</div>
-                                <div>{u.status}</div>
-                            </span>
-                            <span>
-                                <div>{"u.location.country"}</div>
-                                <div>{"u.location.city"}</div>
-                            </span>
-                        </span>
+                        </div>
                     </div>
                 })
             }
-        </div>
+        </section>
     )
 }
 

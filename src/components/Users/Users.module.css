@@ -1,3 +1,62 @@
+.users {
+    padding: 10px;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px #e2e2e2;
+    color: #5d5d5d;
+}
+.users__pages {
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #efefef;
+}
+.users__pages span {
+    margin-right: 5px;
+}
+
+.users__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.users__box_photo_name {
+    display: flex;
+}
+.users__photo {
+    margin-right: 15px;
+}
+.users__name {
+    margin-top: 8px;
+    font-weight: 500;
+    color: #ff7600;
+}
+.users__name_status {
+
+}
+
+.users__box_follow {
+
+}
+.users__follow {
+    position: relative;
+}
+.users__follow button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    background: #ff9941;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+.users__follow button:hover {
+    background: #ff7600;
+    transition: 0.2s;
+}
+
 .userPhoto {
     width: 60px;
     border-radius: 50%;
