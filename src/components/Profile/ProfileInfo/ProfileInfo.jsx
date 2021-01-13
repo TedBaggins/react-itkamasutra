@@ -1,5 +1,6 @@
 import styles from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
+import user_photo_default from '../../../images/user_default.png';
 
 const ProfileInfo = (props) => {
 
@@ -12,10 +13,13 @@ const ProfileInfo = (props) => {
     return (
         <div className={styles.profileinfo}>
             <div className={styles.profileinfo__photo}>
-                <img src={props.profile.photos.large} />
+                <img src={props.profile.photos.large != null
+                ? props.profile.photos.large
+                : user_photo_default} />
             </div>
             <div className={styles.profileinfo__description}>
-                Description
+                <span className={styles.profileinfo__name}>{props.profile.fullName}</span>
+                {/*Description*/}
             </div>
         </div>
     )

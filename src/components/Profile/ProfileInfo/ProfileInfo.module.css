@@ -22,3 +22,7 @@
     color: #5d5d5d;
     box-shadow: 0 5px 5px #ececec;
 }
+.profileinfo__name {
+    font-size: 20px;
+    font-weight: 500;
+}
