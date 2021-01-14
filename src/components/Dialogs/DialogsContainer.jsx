@@ -1,10 +1,14 @@
 import Dialogs from './Dialogs';
 import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
 import { connect } from 'react-redux';
+import {Redirect} from "react-router-dom";
+import React from "react";
+import {withAuthRedirect} from "../../hoc/WithAuthRedirect";
+import {compose} from "redux";
 
 let mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage
+        dialogsPage: state.dialogsPage,
     }
 }
 let mapDispatchToProps = (dispatch) => {
@@ -18,6 +22,7 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
-
-export default DialogsContainer;
+export default compose( // возвращает "DialogsContainer"
+    connect(mapStateToProps, mapDispatchToProps), // рез-т вызова withAuthRedirect закидывается сюда
+    withAuthRedirect // Dialogs сперва закидывается сюда
+)(Dialogs)
