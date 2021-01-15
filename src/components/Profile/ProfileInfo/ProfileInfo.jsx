@@ -1,6 +1,7 @@
 import styles from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import user_photo_default from '../../../images/user_default.png';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -19,7 +20,7 @@ const ProfileInfo = (props) => {
             </div>
             <div className={styles.profileinfo__description}>
                 <span className={styles.profileinfo__name}>{props.profile.fullName}</span>
-                {/*Description*/}
+                <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
             </div>
         </div>
     )
