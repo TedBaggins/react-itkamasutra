@@ -1,8 +1,30 @@
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import styles from './Dialogs.module.css';
-import {Redirect} from "react-router-dom";
 import React from "react";
+import {Field, reduxForm} from "redux-form";
+import {Textarea} from "../common/FormsControls/FormsControls";
+import {maxLengthCreator, requiredField} from "../../utils/validators/validators";
+
+const maxLength50 = maxLengthCreator(50);
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div className={styles.dialog__add}>
+                <div>
+                    <Field component={Textarea}
+                           name={"newMessageField"}
+                           placeholder={"Enter your message"}
+                           validate={[requiredField, maxLength50]}/>
+                </div>
+                <div><button>Send</button></div>
+            </div>
+        </form>
+    )
+}
+
+const AddMessageFormRedux = reduxForm({form: "dialogAddMessageForm"})(AddMessageForm);
 
 const Dialogs = (props) => {
 
@@ -16,17 +38,9 @@ const Dialogs = (props) => {
     });
     let newMessageBody = state.newMessageBody;
 
-    let onSendMessageClick = () => {
-        props.sendMessage();
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageField);
     }
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
-
-    // if (!props.isAuth) {
-    //     return <Redirect to={"/login"}/>
-    // }
 
     return (
         <section className={styles.dialogs}>
@@ -35,14 +49,7 @@ const Dialogs = (props) => {
             </div>
             <div className={styles.dialog__messages}>
                 <div className={styles.dialog__box}>{ messagesElements }</div>
-                <div className={styles.dialog__add}>
-                    <div><textarea 
-                            value={newMessageBody} 
-                            onChange={onNewMessageChange}
-                            placeholder="Enter your message"
-                        /></div>
-                    <div><button onClick={onSendMessageClick}>Send</button></div>
-                </div>
+                <AddMessageFormRedux onSubmit={addNewMessage}/>
             </div>
         </section>
     )
