@@ -50,3 +50,8 @@
 .icon-flickr:before {
     content: "\eaa3";
 }
+
+/* icon warning */
+.icon-exclamation-circle:before {
+    content: "\f06a";
+}

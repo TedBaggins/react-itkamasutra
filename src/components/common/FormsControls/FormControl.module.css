@@ -9,3 +9,28 @@
 .formControl.error span {
     color: red;
 }
+
+/* error message block */
+.form_error {
+    position: relative;
+    padding: 5px;
+    border: 1px solid #ef4c41;
+    border-radius: 4px;
+    background: #ff5f54;
+    margin: 5px 0;
+}
+.form_error span {
+    padding: 0 10px 0 28px;
+    color: white;
+    font-weight: 500;
+}
+.form_error span:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f06a";
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 18px;
+}

@@ -31,7 +31,7 @@ export const setAuthUserData = (userId, email, login, isAuth) => {
 
 export const getAuthUserData = () => {
     return (dispatch) => {
-        authAPI.authMe()
+        return authAPI.authMe()
             .then(response => {
                 if (response.data.resultCode === 0) {
                     let {id, login, email} = response.data.data;
@@ -42,16 +42,14 @@ export const getAuthUserData = () => {
 }
 export const login = (email, password, rememberMe) => {
     return (dispatch) => {
-        // let action = stopSubmit("login", {email: "Email is incorrect"});
-        // dispatch(action);
-        // return;
         authAPI.login(email, password, rememberMe)
             .then(response => {
                 if (response.data.resultCode === 0) {
                     dispatch(getAuthUserData());
                 } else {
-                    // let action = stopSubmit("login", {email: "Email is incorrect"});
-                    // dispatch(action);
+                    let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
+                    // dispatch(stopSubmit("login", {_error: "Incorrect email or password"}));
+                    dispatch(stopSubmit("login", {_error: message}));
                 }
             });
     }

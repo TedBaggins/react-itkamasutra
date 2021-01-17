@@ -1,7 +1,21 @@
-import {NavLink} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 import styles from './Navbar.module.css';
+import {connect} from "react-redux";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    // if (!props.isAuth) {
+    //     return (
+    //         <section className={styles.navbar}>
+    //             <nav className={styles.nav}>
+    //                 <div className={styles.nav__item}>
+    //                     <NavLink to="/news" className={`${styles.nav__link_news} ${styles.nav__link}`} activeClassName={styles.nav__link_active}>News</NavLink>
+    //                 </div>
+    //             </nav>
+    //         </section>
+    //     )
+    // }
+
     return (
         <section className={styles.navbar}>
             <nav className={styles.nav}>
@@ -28,4 +42,10 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+// export default Navbar;
+
+let mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+});
+
+export default connect(mapStateToProps, {})(Navbar);

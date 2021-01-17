@@ -2,7 +2,7 @@ import React from 'react';
 import Profile from './Profile';
 import { connect } from 'react-redux';
 import {getUserProfile, getUserStatus, updateUserStatus} from '../../redux/profile-reducer';
-import {Redirect, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {withAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
 
@@ -11,7 +11,10 @@ class ProfileContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if(!userId) {
-            userId = 13921; // 13921, 2
+            userId = this.props.authorizedUserId; // 13921, 2
+            if (!userId) {
+                this.props.history.push("/login");
+            }
         }
         this.props.getUserProfile(userId);
         this.props.getUserStatus(userId);
@@ -27,7 +30,9 @@ class ProfileContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-    status: state.profilePage.status
+    status: state.profilePage.status,
+    authorizedUserId: state.auth.userId,
+    isAuth: state.auth.isAuth
 });
 
 // let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
@@ -36,6 +41,6 @@ let mapStateToProps = (state) => ({
 export default compose(
     connect(mapStateToProps, {getUserProfile, getUserStatus, updateUserStatus}), // рез-т вызова withRouter закидывается сюда
     withRouter, // рез-т вызова withAuthRedirect закидывается сюда
-    withAuthRedirect // ProfileContainer сперва закидывается сюда
+    //withAuthRedirect // ProfileContainer сперва закидывается сюда
 )(ProfileContainer);
 
