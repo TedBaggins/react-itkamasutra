@@ -18,6 +18,8 @@
 .users__item {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #efefef;
 }
 
 .users__box_photo_name {

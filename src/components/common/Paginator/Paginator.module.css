@@ -1,11 +1,5 @@
 .paginator {
-    padding: 5px;
-    margin-bottom: 10px;
-    background: #efefef;
-}
-.paginator span {
-    margin-right: 5px;
-}
-.paginator_selected {
-    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 15px 0;
 }
