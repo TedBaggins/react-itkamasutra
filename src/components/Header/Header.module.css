@@ -22,14 +22,20 @@
     color: #656565;
 }
 .header__login a,
-.header__login span {
-    padding: 5px 15px 5px 15px;
+.header__login button {
+    padding: 5px 20px;
     background-color: #efefef;
     border-radius: 5px;
     color: #656565;
+    outline: none;
+    border: 1px solid #efefef;
+    font-weight: 600;
+}
+.header__login button {
+    margin-left: 15px;
 }
 .header__login a:hover,
-.header__login span:hover {
+.header__login button:hover {
     background: #e0e0e0;
     cursor: pointer;
     transition: 0.5s;

@@ -9,10 +9,36 @@
     border-radius: 4px;
     margin-right: 20px;
     box-shadow: 0 5px 5px #ececec;
+    position: relative;
 }
 .profileinfo__photo img {
     width: 100%;
     border-radius: 4px;
+}
+.profileinfo__upload_box {
+    position: absolute;
+    height: 35px;
+    left: 0;
+    top: 0;
+    padding: 25px;
+    width: 100%;
+    display: none;
+}
+.profileinfo__upload_box input[type=file] {
+    display: none;
+}
+.profileinfo__upload_btn {
+    padding: 8px 20px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: #686868;
+    color: #efefef;
+    font-weight: 500;
+    border-radius: 4px;
+}
+.profileinfo__upload_btn:hover {
+    background: #747474;
 }
 
 .profileinfo__description {

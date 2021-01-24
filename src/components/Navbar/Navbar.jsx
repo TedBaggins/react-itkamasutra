@@ -1,6 +1,7 @@
 import {NavLink, withRouter} from 'react-router-dom';
 import styles from './Navbar.module.css';
 import {connect} from "react-redux";
+import Login from "../Login/Login";
 
 const Navbar = (props) => {
 
@@ -15,6 +16,12 @@ const Navbar = (props) => {
     //         </section>
     //     )
     // }
+
+    if (!props.isAuth) {
+        return (
+            <div></div>
+        )
+    }
 
     return (
         <section className={styles.navbar}>

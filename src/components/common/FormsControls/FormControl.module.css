@@ -1,5 +1,5 @@
 .formControl {
-
+    margin-bottom: 8px;
 }
 .formControl.error input,
 .formControl.error textarea{
@@ -33,4 +33,44 @@
     transform: translateY(-50%);
     color: white;
     font-size: 18px;
+}
+
+
+.login__box {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px #e2e2e2;
+    color: #5d5d5d;
+    margin: 0 auto;
+    width: 300px;
+}
+.login__title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.login__box input[type=text],
+.login__box input[type=password] {
+    padding: 10px;
+    background: whitesmoke;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+}
+.login__box button {
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background: #ff9941;
+    color: white;
+    font-weight: 600;
+}
+.login__box button:hover {
+    cursor: pointer;
+    background: #ff7600;
+    transition: 0.2s;
 }
