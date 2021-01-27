@@ -2,6 +2,7 @@ import {NavLink, withRouter} from 'react-router-dom';
 import styles from './Navbar.module.css';
 import {connect} from "react-redux";
 import Login from "../Login/Login";
+import classnames from 'classnames';
 
 const Navbar = (props) => {
 
@@ -26,8 +27,8 @@ const Navbar = (props) => {
     return (
         <section className={styles.navbar}>
             <nav className={styles.nav}>
-                <div className={`${styles.nav__item} ${styles.active}`}>
-                    <NavLink to="/profile" className={`${styles.nav__link_profile} ${styles.nav__link}`} activeClassName={styles.nav__link_active}>Profile</NavLink>
+                <div className={classnames(styles.nav__item, styles.active)}>
+                    <NavLink to="/profile" className={classnames(styles.nav__link_profile, styles.nav__link)} activeClassName={styles.nav__link_active}>Profile</NavLink>
                 </div>
                 <div className={styles.nav__item}>
                     <NavLink to="/dialogs" className={`${styles.nav__link_messages} ${styles.nav__link}`} activeClassName={styles.nav__link_active}>Messages</NavLink>

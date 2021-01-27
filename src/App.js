@@ -4,7 +4,7 @@ import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import UsersContainer from './components/Users/UsersContainer';
 import Settings from './components/Settings/Settings';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Redirect, Route, withRouter} from "react-router-dom";
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from "./components/Login/Login";
@@ -23,8 +23,16 @@ const Music = React.lazy(() => import('./components/Music/Music'));
 
 class App extends React.Component {
 
+    catchAllUnhandledErrors = (promiseRejectionEvent) => {
+        alert("Some error occured");
+    }
+
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+    }
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
 
     render() {
@@ -39,6 +47,7 @@ class App extends React.Component {
                     <div className="container">
                         <div className="main-wrapper__inner">
                             <Navbar/>
+                            <Route exact path='/' render={() => <Redirect to={"/profile"}/>}/>
                             <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
                             <Route path="/dialogs" render={() => {
                                 return <React.Suspense fallback={<Preloader/>}>
