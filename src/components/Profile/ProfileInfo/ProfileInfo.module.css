@@ -8,8 +8,10 @@
     background: #fff;
     border-radius: 4px;
     margin-right: 20px;
-    box-shadow: 0 5px 5px #ececec;
+    /*box-shadow: 0 5px 5px #ececec;*/
+    box-shadow: 0 3px 3px #e2e2e2;
     position: relative;
+    height: 0%;
 }
 .profileinfo__photo img {
     width: 100%;
@@ -46,9 +48,40 @@
     padding: 15px;
     background: #fff;
     color: #5d5d5d;
-    box-shadow: 0 5px 5px #ececec;
+    /*box-shadow: 0 5px 5px #ececec;*/
+    box-shadow: 0 3px 3px #e2e2e2;
 }
 .profileinfo__name {
     font-size: 20px;
     font-weight: 500;
+}
+.profileinfo__about {
+    margin-top: 20px;
+}
+.profileinfo__contact_box {
+    margin-top: 20px;
+}
+.profileinfo__contact_items {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+}
+.profileinfo__contact_item {
+    margin-right: 15px;
+}
+.profileinfo__edit {
+    margin-top: 10px;
+}
+.profileinfo__edit_btn {
+    padding: 3px 20px;
+    background: #efefef;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #656565;
+    outline: none;
+}
+.profileinfo__edit_btn:hover {
+    background: #e0e0e0;
+    cursor: pointer;
+    transition: 0.5s;
 }

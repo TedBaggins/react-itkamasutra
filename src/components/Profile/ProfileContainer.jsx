@@ -1,7 +1,13 @@
 import React from 'react';
 import Profile from './Profile';
 import { connect } from 'react-redux';
-import {getUserProfile, getUserStatus, updateUserStatus, saveUserPhoto} from '../../redux/profile-reducer';
+import {
+    getUserProfile,
+    getUserStatus,
+    updateUserStatus,
+    saveUserPhoto,
+    saveUserProfile
+} from '../../redux/profile-reducer';
 import {withRouter} from 'react-router-dom';
 import {withAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
@@ -40,7 +46,7 @@ class ProfileContainer extends React.Component {
         return (
             <Profile {...this.props} profile={this.props.profile} isOwner={!this.props.match.params.userId}
                      status={this.props.status} updateUserStatus={this.props.updateUserStatus}
-                     saveUserPhoto={this.props.saveUserPhoto}/>
+                     saveUserPhoto={this.props.saveUserPhoto} saveProfile={this.props.saveUserProfile}/>
         )
     }
 }
@@ -56,7 +62,7 @@ let mapStateToProps = (state) => ({
 // let WithUrlDataContainerComponent = withRouter(AuthRedirectComponent);
 // export default connect(mapStateToProps, {getUserProfile}) (WithUrlDataContainerComponent);
 export default compose(
-    connect(mapStateToProps, {getUserProfile, getUserStatus, updateUserStatus, saveUserPhoto}), // рез-т вызова withRouter закидывается сюда
+    connect(mapStateToProps, {getUserProfile, getUserStatus, updateUserStatus, saveUserPhoto, saveUserProfile}), // рез-т вызова withRouter закидывается сюда
     withRouter, // рез-т вызова withAuthRedirect закидывается сюда
     //withAuthRedirect // ProfileContainer сперва закидывается сюда
 )(ProfileContainer);

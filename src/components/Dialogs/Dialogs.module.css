@@ -3,7 +3,8 @@
     display: flex;
     background: #fff;
     border-radius: 4px;
-    box-shadow: 0 5px 5px #ececec;
+    /*box-shadow: 0 5px 5px #ececec;*/
+    box-shadow: 0 3px 3px #e2e2e2;
 }
 
 .dialogs__users {

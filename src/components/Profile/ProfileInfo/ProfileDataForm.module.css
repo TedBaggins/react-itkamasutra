@@ -1,0 +1,62 @@
+.profileDataForm__box {
+    margin-top: 15px;
+}
+
+.profileDataForm__formControl {
+    display: flex;
+}
+.profileDataForm__formControl label {
+    width: 250px;
+}
+.profileDataForm__formControl input:not([type='checkbox']),
+.profileDataForm__formControl textarea
+{
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d6d6d6;
+    outline: none;
+    color: #5d5d5d;
+    border-radius: 4px;
+}
+
+.profileDataForm__box button {
+    padding: 8px 20px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    background: #ff9941;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+    width: 100px;
+}
+.profileDataForm__box button:hover {
+    background: #ff7600;
+    transition: 0.2s;
+}
+
+/* error message block */
+.form_error {
+    position: relative;
+    padding: 5px;
+    border: 1px solid #ef4c41;
+    border-radius: 4px;
+    background: #ff5f54;
+    margin: 5px 0;
+}
+.form_error span {
+    padding: 0 10px 0 28px;
+    color: white;
+    font-weight: 500;
+}
+.form_error span:before {
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f06a";
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 18px;
+}
+
