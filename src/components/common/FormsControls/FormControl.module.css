@@ -36,7 +36,6 @@
     font-size: 18px;
 }
 
-
 .login__box {
     padding: 15px;
     background-color: #fff;
@@ -74,4 +73,8 @@
     cursor: pointer;
     background: #ff7600;
     transition: 0.2s;
+}
+
+.captcha__box {
+    text-align: center;
 }
